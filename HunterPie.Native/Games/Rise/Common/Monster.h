@@ -12,6 +12,12 @@ namespace Games
                 uint8_t unk_padding[0x2C4];
                 int32_t id;
             };
+
+            struct UnkMonster
+            {
+                uint8_t unk_padding[0x50];
+                Monster* monster;
+            };
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Games
                 int unk14;
                 int unk15;
                 int Id;
+                uint8_t padding_tail[100];
             };
 
             using fnCalculateEntityDamage = MHREntityData* (*)(
@@ -43,6 +44,33 @@ namespace Games
                 void* arg6
             );
 
+            using fnDealDamageToEntity = uintptr_t** (*)(
+                intptr_t** arg1,
+                intptr_t* arg2,
+                UnkMonster arg3,
+                int arg4,
+                int arg5,
+                int arg6
+            );
+
+            using fnHitTarget = MHREntityData* (*)(
+                intptr_t arg1,
+                Monster* arg2,
+                intptr_t arg3
+            );
+
+            using fnUnkButInteresting = intptr_t(*)(
+                intptr_t arg1,
+                Monster* target,
+                MHREntityData* damageData
+            );
+
+            static MHREntityData* (*ogHitTarget)(
+                intptr_t arg1,
+                Monster* arg2,
+                intptr_t arg3
+            );
+
             static MHREntityData* (*ogCalculateEntityDamage)(
                 intptr_t arg1,
                 Monster* target,
@@ -50,6 +78,21 @@ namespace Games
                 intptr_t arg4,
                 intptr_t arg5,
                 void* arg6
+            );
+
+            static uintptr_t** (*ogDealDamageToEntity)(
+                intptr_t** arg1,
+                intptr_t* arg2,
+                UnkMonster arg3,
+                int arg4,
+                int arg5,
+                int arg6
+            );
+
+            static intptr_t (*ogUnkButInteresting)(
+                intptr_t arg1,
+                Monster* target,
+                MHREntityData* damageData
             );
         }
     }

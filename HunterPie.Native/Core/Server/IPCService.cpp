@@ -108,7 +108,7 @@ void IPCService::DispatchIPCMessage(void* data)
 {
     IPCMessage* message = (IPCMessage*)data;
 
-    LOG("Received message: %d", message->type);
+    //LOG("Received message: %d", message->type);
 
     if (m_MessageCallbacks.find(message->type) == m_MessageCallbacks.end())
         return;

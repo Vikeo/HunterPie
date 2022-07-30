@@ -23,6 +23,21 @@ namespace Games
                     void* arg6
                 );
 
+                uintptr_t** DealDamageToEntity(
+                    intptr_t** arg1,
+                    intptr_t* arg2,
+                    UnkMonster arg3,
+                    int arg4,
+                    int arg5,
+                    int arg6
+                );
+
+                MHREntityData* HitTarget(
+                    intptr_t arg1,
+                    Monster* target,
+                    intptr_t arg3
+                );
+
                 class DamageHooks : public IInitializable
                 {
                 public:

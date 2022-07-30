@@ -46,7 +46,7 @@ void DamageTrackManager::UpdateDamage(EntityDamageData damageData)
     totalEntityData.rawDamage += damageData.rawDamage;
     totalEntityData.elementalDamage += damageData.elementalDamage;
 
-    LOG("[DEBUG] Entity %d -> %08X : %f damage (total: %f)", entityData.source.index, target, entityData.rawDamage + entityData.elementalDamage, totalEntityData.rawDamage + totalEntityData.elementalDamage);
+    //LOG("[DEBUG] Entity %d -> %08X : %f damage (total: %f)", entityData.source.index, target, entityData.rawDamage + entityData.elementalDamage, totalEntityData.rawDamage + totalEntityData.elementalDamage);
 }
 
 HuntStatistics* DamageTrackManager::GetHuntStatisticsBy(intptr_t target)
